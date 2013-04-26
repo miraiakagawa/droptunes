@@ -1,10 +1,12 @@
 from django.conf.urls import patterns, include, url
+from droptunes.views import hello_view
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+	url(r'^$', view=hello_view, name='hello_view'),
     # Examples:
     # url(r'^$', 'droptunes_project.views.home', name='home'),
     # url(r'^droptunes_project/', include('droptunes_project.foo.urls')),
