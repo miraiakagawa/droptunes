@@ -1,1 +1,1 @@
-web: python manage.py collectstatic --noinput; gunicorn droptunes_project.wsgi
+web: gunicorn droptunes_project.wsgi
