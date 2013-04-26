@@ -1,4 +1,5 @@
 from django.conf.urls import patterns, include, url
+from django.conf import settings
 from droptunes.views import hello_view
 
 # Uncomment the next two lines to enable the admin:
@@ -19,6 +20,6 @@ urlpatterns = patterns('',
 )
 
 if not settings.DEBUG:
-	urlpatterns += patterns(”,
-	(r’^static/(?P.*)$’, ‘django.views.static.serve’, {‘document_root’: settings.STATIC_ROOT}),
-	)
+    urlpatterns += patterns('',
+        (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+    )
